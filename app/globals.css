@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+:root {
+  --background: #f7f8fa;
+  --foreground: #18253f;
+  --card: #fff;
+  --muted: #f0f3f8;
+  --muted-foreground: #637087;
+  --primary: #3e50d5;
+  --primary-foreground: #fff;
+  --border: #e3e7ee;
+  --input: #dce2ec;
+  --ring: #6474e5;
+  --switch: #a1aaba;
+  --chart-grid: #e9edf3;
+}
+.dark {
+  --background: #101724;
+  --foreground: #e9eef9;
+  --card: #182235;
+  --muted: #202d43;
+  --muted-foreground: #a4b1c7;
+  --primary: #8392ff;
+  --primary-foreground: #10172d;
+  --border: #2c3b51;
+  --input: #384862;
+  --ring: #a4b0ff;
+  --switch: #54647e;
+  --chart-grid: #2c3b51;
+  color-scheme: dark;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-switch: var(--switch);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+* {
+  border-color: var(--border);
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+button:not(:disabled),
+select {
+  cursor: pointer;
+}
+button,
+a,
+input,
+select,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+::selection {
+  background: #cdd4ff;
+  color: #142044;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 3px 10px #17223b03;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+.metric {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+}
+.select {
+  border: 1px solid var(--input);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 14px;
+  min-height: 40px;
+  padding: 8px 30px 8px 12px;
+}
+.table-wrap {
+  position: relative;
+  overflow-x: auto;
+}
+th {
+  font-size: 12px;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  text-align: left;
+  white-space: nowrap;
+}
+td {
+  font-size: 14px;
+}
+th,
+td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+.recharts-wrapper {
+  font-size: 12px;
+}
+.recharts-default-tooltip {
+  border-radius: 10px;
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+}
+.recharts-tooltip-label {
+  color: var(--foreground) !important;
+}
+.animate-enter {
+  animation: enter 0.3s ease-out;
+}
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
