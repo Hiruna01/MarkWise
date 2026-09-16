@@ -4,7 +4,7 @@ A private examination-results workspace built with Next.js App Router, React, st
 
 ## Run locally
 
-Use Node.js 22.13+ (Node 22 LTS recommended).
+Use Node.js 22.13+ (Node 22 LTS recommended).yhfhjdj
 
 ```sh
 npm ci
